@@ -1,0 +1,33 @@
+~~~ GET ~~~
+Whenever visiting a URL, our browsers default to a GET request to obtain resources hosted at that URL
+From here, the browser may send other reqeusts using different HTTP methods
+
+
+~~~ HTTP Basic Auth ~~~
+- handled directly by the webserver to protect the page/directory without directly interacting
+	with the web application, unlike using HTTP params to validate a POST request
+
+-u: flag for cURL in the form of user:pass
+curl -u admin:admin http://<SERVER_IP>:<PORT>/
+
+we could also do https://user:pass@server_ip...
+
+
+~~~ HTTP Authorization Header ~~~
+
+If using basic auth, Authorization header would be Basic YWRtaW46YWRtaW4= (base64 encoding admin:admin)
+If using modern auth, such as JWT, header would be Bearer containing a longer encrypted token
+
+
+Basic could work as such
+curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' http://...
+
+
+Modern login forms of webapps use HTTP POST and return a cookie to maintain authentication
+
+
+~~~ GET Parameters ~~~
+Using parameters, we contact a remote source containing the information for the initial page to return
+
+We can replicate a cURL request in browser by doing 'Copy > Copy as Fetch' and pasting into the Console tab
+

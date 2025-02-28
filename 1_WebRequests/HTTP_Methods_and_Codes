@@ -1,0 +1,41 @@
+
+~~~ HTTP Methods and Codes ~~~
+
+Many methods supported for accessing a resource; methods tell server how to process a request and reply to it
+
+
+~~~ Request Methods ~~~
+
+GET - request specific resource, query strings can be passed in the URL
+POST - send data to server, common for forms/logins or uploading images/documents to website
+HEAD - requests the headers that would be returned if a GET request were made to the server
+PUT - creates new resource on server, such as a user or blog post; improper controls can lead to malicious upload
+DELETE - deletes existing webserver resource; can lead to DoS by deleting critical files if not secured properly
+OPTIONS - returns information about the server, including accepted methods
+PATCH - applies partial modifications to the resource at the specified location
+
+MORE METHODS HERE: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+
+~~~ Response Codes ~~~
+
+Alert the client of their request's status
+
+5 TYPES:
+1xx - provides information that doesnt affect the request's processing
+2xx - returned when a request succeeds
+3xx - returned when the server redirects the client
+4xx - signifies improper requests from the client (Ex. requesting a non-existent resource)
+5xx - returned when there is a prom with the server itself
+
+
+Common Codes:
+200 OK - successful request, body containts the resource
+302 Found - redirects client to another URL, such as a dashboard after a successful login
+400 Bad Request - encountered malformed request, such as ones missing line terminators
+403 Forbidden - improper access to the resource, could also be returned when server detects malicious input
+404 Not Found - returned when the clients reqeusts a non-existent resource
+500 Internal Server Error - returned when the server cannot process the request
+
+MORE CODES HERE: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
