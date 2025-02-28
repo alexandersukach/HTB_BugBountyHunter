@@ -1,0 +1,35 @@
+
+~~~ HyperText Transfer Protocol Secure (HTTPS) ~~~
+
+HTTP data is transferred in clear-text, meaning anyone between the src/dest can perform a MiTM attack
+
+HTTPS was created to combat this by encrypting all transferred communication
+
+
+~~~ HTTPS Overview ~~~
+
+Although the data is encrypted, the HTTPS request may still reveal the visited URL if it contacted
+	a clear-text DNS server; recommented to use encrypted ones, such as 8.8.8.8 or 1.1.1.1, or a VPN
+
+
+~~~ HTTPS Flow ~~~
+
+1. If we visit a website, using HTTP, that enforces HTTPS, our request to port 80 will be redirected to
+the secure HTTPS port 443
+	- This is done via the '301 Moved Permanently' response code
+2. Client sends a "client hello" packet, to which the server replies "server hello", followed by a key exchange
+	to exchange SSL certificates.
+3. Client verifies key/cert and sends one of its own; an encrypted handshake confirms whether everything is working correctly
+4. Once the hanshake is completed successfully, encrypted communication begins
+
+
+~~~ cURL for HTTPS ~~~
+
+- automatically handles all hTTPS communication standards, such as the handshake, and encryption/decryption of data
+However, if we contact a website with an invalid/outdated SSL certificate, cURL will not proceed with communication
+
+-k: flag skips the certificate check
+
+
+
+
