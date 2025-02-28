@@ -1,2 +1,5 @@
 # HTB_BugBountyHunter
-Collection of notes from HTB's Bug Bounty Hunter learning path
+Recently switched over from TryHackMe to HackTheBox  
+Starting from scratch to get my money's worth  
+Figured I'd publish my notes along the way  
+Do not expect exercise answers to be posted  
