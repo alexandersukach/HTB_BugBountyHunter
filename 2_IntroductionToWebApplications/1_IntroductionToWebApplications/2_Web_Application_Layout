@@ -1,0 +1,84 @@
+~~~ Web Application Infrastructure ~~~
+describes structure of required components needed for web app to function as intended
+
+The following are common models:
+
+Client-Server: a server hosts the web app and distributes it to any clients trying to access it
+2 types of components interpreted and executed on both the front and back ends
+
+One Server: the entire web app (or even multiple and their components), including db, are hosted on a single server
+simplest, yet most risky: "all eggs in one basket"
+if any single web app is vulnerable, the entire webserver becomes vulnerable
+also, if server goes down, all the web apps become inaccessible
+
+Many Servers - One Database: database is on its own server and allows access to web app's hosting server
+allows several web apps to access a single database with the same data without syncing between them
+the main security advantage is segmentation, where each of component of the web app is located/hosted separately
+also, if the database is compromised, the web app itself isn't directly affected
+we do need to limit web app acccess to only data necessary for functionality
+
+Many Servers - Many Databases: within the database server, each wqeb app's data is hosted in a separate database
+the web app can only access private data and only common data shared across web apps
+it's also possible to host each web app's database on its separate database server
+
+
+
+~~~ Web Application Components ~~~
+components that make up the web app represent all components the web app interacts with
+broken into 3 areas: UI,UX, Client, and Server components
+
+Can be broken down into:
+1. Client
+2. Server
+        - Webserver
+        - Web Application Logic
+        - Database
+3. Services (Microservices)
+        - 3rd Party Integrations
+        - Web Application Integrations
+4. Functions (Serverless)
+
+
+~~~ Web Application Architecture ~~~
+
+all the relationships between various web app components
+
+Devided into three different layers (Three Tier Architecture):
+Presentation - UI components that enable communication with application and the system
+        - Access by client through web browser and returned as HTML, CSS, and JavaScript
+Application - ensures all client requests are correctly processed
+        - authorization, privileges, data passed on to the client are some of the checked criteria
+Data - works closely with application layer to determine where required data is stored and can be accessed
+
+
+
+Microservices are independent of the web app and are usually programmed for one task only:
+        Ex. registration, search, payments, ratings, reviews, etc
+
+Communication between these services is stateless (response and request are independent)
+        - Data is stored separately from the respective microservices
+
+Using microservices is considered service-oriented architecture (SOA), which is a collection of
+        different automated functions focusing on a single goal (yet these services do depend on each other)
+
+Microservices allow agility, flexible scaling, easy deployment, reusable code, resilience, etc.
+
+
+Cloud providers such as AWS, Azure, GCP, etc. offer serverless architecture by providing web app frameworks
+        to be built upon without having to worry about the servers themselves
+- Web apps run in stateless computing containers, such as Docker
+
+- Provides flexibility to build/deploy without having to manage infrastructure (all server management is
+        handled by the cloud provider)
+
+
+
+~~~ Architecture Security ~~~
+Security must be considered at every phase of development and pentesting must be carried throughout the
+        development lifecycle
+
+
+A web app could have all functionality securely implemented, but BAC could allow users to reach hidden
+        admin features, for example.
+
+

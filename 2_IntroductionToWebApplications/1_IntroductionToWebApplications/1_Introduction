@@ -1,0 +1,51 @@
+interactive, running on web browser, usually adopt a client-server architecture with front and back-end components
+
+
+~~~ Web Applications vs Websites ~~~
+
+Traditional websites are static and the same for everyone
+Webapps are dynamic, interactive, and have a different view for each user
+
+
+~~~ Web Applications vs. Native Operating System Applications
+
+Unlike native OS apps, web apps are platform-independent and can run in a browser on any os
+No local installation necessary; execution occurs on remote server, which doesn't take up space on user's hard drive
+
+OS apps do have faster operation speed and better abilitiy to utilize libraries and local hardware
+- Much faster to load an operate, not limited to browser's capabilities only
+
+Hybrid web apps are on the rise: modern web frameworks that use OS capabilities and resources
+
+
+~~~ Web Application Distribution ~~~
+
+Common open source web apps: WordPress, OpenCart, Joomla
+
+Closed source web apps are developed by a specific organization then sold to another or used through a subscription model
+Common closed source web apps: Wix, Shopify, DotNetNuke
+
+
+~~~ Security Risks of Web Application ~~~
+
+Anyone, anywhere, with an internet connection and web browser can perform a web app attack.
+
+Successful attack can lead to monetary losses, sensitive data leaks, business interruptions, etc.
+
+GOOD REFERENCE: https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
+
+
+~~~ Attacking Web Applications ~~~
+
+The attack surface is vast and the dynamic nature means things are always changing/being overlooked
+
+Example flaws and real world examples:
+SQLi - obtain AD usernames and perform password spraying attack against a VPN or email portal
+        spraying - brute-force where attacker cycles through passwords to use against all usernames
+File Inclusion - reading source code to a hidden page/directory which exposes additional functionality to gain RCE
+Unrestricted File Upload - Web app allowing users to upload a non image as a profile picture (file with malicious code)
+Insecure Direct Object Referencing (IDOR) - combined with broken access control, this can be used to access another user's
+        files or functionality; editing your profile websit.com/user1/edit and swapping user1 for user2
+Broken Access Control - creating an account and changing admin=true or roleid=admin when intercepting the request
+
+

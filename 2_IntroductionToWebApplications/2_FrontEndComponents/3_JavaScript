@@ -1,0 +1,34 @@
+
+usually used on the front end of an app to be executed within a browser, although there are backend
+	implementations such as NodeJS
+
+HTML/CSS control the look of a page; JavaScript controls functionality, as without it, a web page
+	would be mostly static and not contain many interactive elements
+
+Within page source code, JS is loaded using:
+in-line 1. <script type="text/javascript"> js code </script>
+or remotely 2. <script src="./script.js"></script>
+
+
+~~~ Usage ~~~
+Most web apps heavily rely on JS, as it is used to update web page view/content in real-time, accept
+	and proc3ess user input, etc. (Basically just interactive functionality)
+\
+can automate processes and perform HTTP requests to back end for sending/retrieving data (Ex. Ajax)
+
+modern web browsers have JS engines on client-side without relying on back end webservers for
+	updating pages, making it very fast for performany many processes
+
+
+~~~ Frameworks ~~~
+
+Similar to CSS frameworks, it would be inefficient to use pure js to create a site from scratch
+Frameworks introduce libraries that make it simple to re-created advanced functionalities, such
+	as user login/registration, and also introduce new concepts such as dynamically changing
+	HTML code
+
+Common examples: Angular, React, Vue, jQuery
+
+
+
+

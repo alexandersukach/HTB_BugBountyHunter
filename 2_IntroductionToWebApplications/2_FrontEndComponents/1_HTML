@@ -1,0 +1,52 @@
+
+HTML is at the core of of a web page, containing basic elements that are interpreted and displayed
+	by the the browser on the client-side
+ - Elements are displayed in a tree form, similar to XML
+
+
+~~~ URL Encoding ~~~
+A browser needs to know the charset in use to properly display a page's content
+In URLs, browsers can only use ASCII encoding (alphanumeric and certain special chars)
+Therefore, all other characters must be encoded by replacing unsafe characters with % and two
+	hexadecimal digits
+
+Common encodings: 
+space 	%20
+! 	%21
+" 	%22
+# 	%23
+$ 	%24
+% 	%25
+& 	%26
+' 	%27
+( 	%28
+) 	%29
+
+More found: https://www.w3schools.com/tags/ref_urlencode.ASP
+
+
+~~~ Usage ~~~
+Each HTML is called a DOM (Document Object Model), defined by the World Wide Web Consortium (WSC) as:
+a platform and language-neutral interface that allows programs and scripts to dynamically access and
+	 update the content, structure, and style of a document.
+
+Or much simpler:
+programming interface representing a webpage structure as a tree of objects
+
+
+3 parts:
+Core DOM - standard model for all document types
+XML DOM - standard model for XML documents
+HTML DOM - standard model for HTML documents
+
+Basic difference between XML and HTML:
+XML - used for storing data as structured information
+	<firstNam> Maria </firstName>
+	<lastName> Smith </lastName>
+HTML - used for representing content
+	<font size="3"> Maria Smith </font>
+
+
+Elements such as document.head or document.h1 in a tree view can be reffered to as DOMs
+
+

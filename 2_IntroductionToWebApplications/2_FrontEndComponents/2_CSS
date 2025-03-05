@@ -1,0 +1,34 @@
+
+Cascading Style Sheets:
+stylesheet language used to format/style HTML elements
+
+Easiest when supplying HTML elements with ID's or class names for later reference
+
+~~~ Syntax ~~~
+style is defined by {}: element {property : value;}
+	Ex. body {
+		font-size: 14px;
+		}
+
+Properly leveraged syntax can create for advanced animations for a variety of uses
+
+
+~~~ Usage ~~~
+often used alongside JS to dynamically adjust properties of HTML elements (or animations)
+	based on keystrokes or mouse cursor location
+
+
+CSS can be used with other languages, such as XML or within SVG items, to implement their styles
+
+
+
+~~~ Frameworks ~~~
+
+Frameworks have been introduced as it can be inefficient to manually set the style of all HTML
+	elements in each webpage
+- These frameworks contain a collection of sheets and designes making it easier/faster to create
+	visually appealing HTML elements
+- They are also optimized for web app usage, as they are designed to be used with JS and wide
+	use across a web app
+Common examples: Boostrap, SASS, Bulma, Pure, Foundation
+
