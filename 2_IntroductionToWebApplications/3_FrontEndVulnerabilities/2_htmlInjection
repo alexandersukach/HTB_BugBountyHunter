@@ -1,0 +1,19 @@
+
+~~~ HTML Injection ~~~
+important to validate and sanitize accepted user input on the front end, in addition to back end
+
+- occurs when unfiltered user input is displayed on the page, either through retreiving previously
+	submitting code (retrieving user comment from back end db), or by directly displaying
+	unfiltered input through js on the front end
+
+when a user has full control of how their input will be displayed, they can submit html code
+	that can be reflected on the page, or used as an external login form that steals credentials, for
+	example
+
+~~~ Example ~~~
+a input form that can display your name. ex. enter your name, where we can input html code
+	<b> HTML injection </b> will display HTML injection as bolded
+
+since everything is carried out on the front end, refreshing the web page would reset everything to normal
+
+

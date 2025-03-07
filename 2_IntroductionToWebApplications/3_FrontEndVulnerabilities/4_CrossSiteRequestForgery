@@ -1,0 +1,33 @@
+
+~~~ Cross-Site Request Forgery (CSRF) ~~~
+
+- can use XSS vulns to perform queries or API calls on a web app the victim is currently authenticated
+	to; allows the attacker to perform actions as if he were the authenticated user
+- can also use other vulns to perform the same function, such as using HTTP params
+
+a common attack to gain higher access is to craft a js payload that automatically changes
+	the victim's password to a value set by the attacker. once the victim views the payload
+	on a vulnerable page, the js code would execute automatically and use the victim's
+	logged in session to change the password. once complete, the attacker can login as the victim
+
+we could also use a remote .js file, as opposed to js code directly, that contains malicious code
+
+developing this file would require knowledge of the web app's password changing procedure and APIs,
+	meaning the js file would have to replicate the desired functionality and automatically carry it out
+
+~~~ Prevention ~~~
+front end should filter input, in addition to back end, especially if the code may be displayed
+	directly on the client-side without backend communication
+
+sanitization - removing special/non-standard chars from input before displaying/storing it
+validation - ensuring submitted input matches expected format (ex. submitted email matches email format)
+
+wafs could also prevent injection attempts automatically, yet they can be bypassed
+
+many modern browsers have built-in anti-csrf measures, including certain http headers and flags
+	(ex. anti-csrf token or http-only/X-XSS-Protection)
+in the password change situation, a preventative measure is confirming a user's password
+
+
+essentially, xss injections malicious scripts into a user's browser...csrf tricks a user into performing
+	unintended actions 

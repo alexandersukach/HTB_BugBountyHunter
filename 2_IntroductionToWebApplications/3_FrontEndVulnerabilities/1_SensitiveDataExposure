@@ -1,0 +1,30 @@
+
+~~~ Sensitive Data Exposure ~~~
+
+since front end components are executed on the client-side, the end user can be put in  danger
+	if any vulnerabilities have been exploited
+
+
+- refers to the availability of sensitive data in clear-text to the end user, usually found in the 
+	source code or page source of a web app's front end
+
+sometimes credentials, hashes, links, etc. can be found within source code or imported js code
+
+when assessing a web app, first thing to do is review the page source code to identify 'low hanging fruit'
+
+
+~~~ Example ~~~
+
+Sometimes, developers will leave test credentials in the source code that may still be valid
+	<!- - TOTO: remove test credentials test:test - - >
+
+~~~ Prevention ~~~
+front end source code should only contain necessary code for running web app functions, without
+	extra code/comments; always review code that will be visible to end-users when developing
+	a web app
+
+also important to classify data types and apply controls on what can and can't be exposed on the client-side
+
+use js code packing or obfuscation to reduce chance of exposure
+
+

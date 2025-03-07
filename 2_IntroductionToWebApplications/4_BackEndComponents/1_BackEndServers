@@ -1,0 +1,30 @@
+
+~~~ Back End Servers ~~~
+- hardware and os that hosts all applications necessary to run the web app
+the back end server fits in the Data access layer
+
+~~~ Software ~~~
+contains three back end components: web server, database, development framework
+other components may include hypervisors, containers, and wafs
+
+popular combination of "stacks" for be servers, which containi a specific set of back end components
+solution stack - set of subsystems/conponents that create a complete platform such that no additional
+	software is needed to support applications (applications run on top of the platform)
+Ex.
+LAMP - Linux, Apache, MySQL, PHP
+WAMP - Windows, Apache, MYSQL, PHP
+WINS - Windows, IIS, .NET, SQL Server
+MAMP - MacOS, Apache, MYSQL, PHP
+XAMPP - Cross-Platform, Apache, MySQL, PHP/Perl
+
+*Many different variations*
+https://en.wikipedia.org/wiki/Solution_stack
+
+~~~ Hardware ~~~
+power and performance capabilities of the hardware determine web app scalability/responsiveness
+big web apps are designed to distribute load over many be servers that do collective work to perform
+	the same tasks and deliver web app to the user
+
+web apps may utilize data centers or cloud services instead of a single be server
+
+

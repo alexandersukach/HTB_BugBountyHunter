@@ -1,0 +1,21 @@
+
+~~~ Cross-Site Scripting ~~~
+html injection can be used to perform xss attacks by injecting js code to be executed on the client-side
+
+once code is executed on a victim's machine, we can potentially gain access to their account/machine
+
+xss involves the injection of js code to perform more advanced client-side attacks, as opposed to just
+	html injection
+
+Reflected XSS - user input is displayed on the page after processing (ex. search result or error message)
+Stored XSS - user input is stored in the back end db and then displayed upon retrieval (ex. posts or comments)
+DOM XSS - user input is directly shown in the browser and written to an HTML DOM object (ex. vulnerable username
+	or page title)
+
+#"><img src=/ onerror=alert(document.cookie)> is an example of DOM XSS that shows the current user's cookie value
+
+- this payload accesses the html document tree and retrieves the cookie object's value
+when the browser processes our input, it will be considered a new DOM and our js will be executed, displaying
+	the back end value to us in a pop up
+
+attackers can leverage this to steal cookies and authenticate themselves as the victim
