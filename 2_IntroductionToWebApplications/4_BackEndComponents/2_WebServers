@@ -1,0 +1,53 @@
+
+~~~ Web Servers ~~~
+- application running on the back end server that handles HTTP traffic from the client-side browser,
+routes it to the requested page, and finally responds to the client-side browser
+- usually run on TCP ports 80 or 443
+- connect end-users to web app as well as handling responses
+
+~~~ Workflow ~~~
+server accepts HTTP requests, reponds with different responses/codes...common ex.:
+200 OK - response for successful request
+404 NOT FOUND - requested page does not exist
+403 FORBIDDEN - requested page is restricted
+
+List of common status codes:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+100-199: Informational responses
+200-299: Successful responses
+300-399: Redirection messages
+400-499: Client error responses
+500-599: Server error responses
+
+Web servers can accept different user input types: text, json, binary, etc
+
+Pages/files the server process/routes traffic to are the web app core files
+
+cURL -I flag: displays the headers
+
+~~~ Apache ~~~
+or httpd
+- most common web server, usually pre-installed on Linux distros
+- used with PHP for development, but can support .Net, Python, Perl, etc
+
+to extend functionality, you can install modules; Ex.:
+	- to support serving PHP files, must install PHP on back end server,
+	in addition to installing the mod_php module for Apache
+
+~~~ NGINX ~~~
+- second most common
+- focuses on serving concurrent requests with low memory and CPU load
+	achieved  by utilizing an async architecture
+
+~~~ IIS ~~~
+Internet Information Services, developed/maintained by Microsoft
+- mainly runs on Microsoft Windows Servers
+- usually used to host web apps developed for Microsoft .NET framework, but can also host other
+	languages and services, such as FTP
+- optimized for AD integration; features Windows Auth for authenticating users using AD for auto
+	sign in to web apps
+
+
+Other server types include: Apache Tomcat for Java, Node.JS for JS web apps, etc.
+

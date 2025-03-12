@@ -1,0 +1,136 @@
+~~~ Databases ~~~
+- store content/information related to the web app, such as images, files, posts, updates, etc
+- easy storage/retrieval of data; enables dynamic content that is different for each user
+
+when choosing a db, keep in mind speed, size, scalability, and cost
+
+
+~~~ Relational (SQL) ~~~
+- data stored in tables, rows, and columns
+- each table has unique keys, linking tables together (creating relationships)
+
+Schema - relationship between tables within a db
+
+very fast for datasets with clear structure and design
+
+Examples:
+MySQL - most commonly used; open-source and free of charge
+MSSQL - Microsoft's implementation of a relational db, widely used with Windows Servers and IIS
+Oracle - reliable for big businesses, updated frequently to make faster/more reliable
+PostgreSQL - designed to be easily extensible, allowing advanced features without much change
+	to the initial database design
+Other common examples: SQLite, MariaDB, Amazon Aurora, Azure SQL
+
+
+~~~ Non-relational (NoSQL) ~~~
+instead of tables, rows, data is stored using various storage models
+- the lack of structure profvides scalability/flexibilitiy, especially with unstructured datasets
+
+4 common storage models:
+1. Key-Value: 
+for each key, there is a value assigned to it
+each key is unique and accepts only strings
+resemble a relational db, but with each table only having two columns
+Ex.
+	Key	Value
+	Name	Roman
+	Acc #	123
+	Ammont	456
+
+use cases:
+storing session information, user preferences, shopping carts, product recommendations
+
+
+2. Document-Based:
+extension of kv, where values are stored in structured documents like XML or JSON
+easy to map Objects in object-oriented software and also schema-free
+
+key advantage is that documents are independent (no relational integrity) and can be in different
+	formats from each other
+E.g. product review sit where 0 or more users can review a product, each review can be commented
+	on by other users, and can be (dis)liked by 0 or more users
+Ex.
+{
+	"id":"1"
+	"name":"Roman"
+	"status":"Pendint"
+}
+
+use cases:
+user profile, content management
+
+
+3. Wide-Column:
+hybrid approach between relational and kv; stores data tables as sections of columns of data
+	rather than as rows of data
+simplified:
+multi-dimensional kv (map/assosiative array) which is persistent (values exist after creation/access),
+	distributed(across multiple computing and storage nodes), sorted(sorted keys), and sparse(values
+	of certain dimensions may not be populated)
+
+Ex.
+Row Key		Column
+		Name
+		Value
+------------------------
+		Gender		Age
+Sam		Male		21
+		123123		14234123
+
+		Gender
+John		Male
+		93493
+
+		Gender		Education
+Sally		Female		Masters
+		949293		74747474
+
+use cases: user preferences, business intelligence, data warehouse management, reporting systems
+
+
+4. Graph:
+specific purpose of storing graph-oriented data structures
+any storage system with index-free adjacency:
+	every node contains a direct pointer to its adjacent element, with no index lookup needed
+as node  # increases, the cost of a hop remains the same
+
+Ex.
+	:Posted
+Post 1 ----------- Matt
+		     |
+       :Friends with |
+		     |
+	:Liked	     |	:Friends with	   : Shared
+Post 2 ---------- Molly--------------- Sam --------- Post 3
+
+*Very simple visualization, hopefully doesn't get warped on gh *
+
+use cases: social networking site, recommendation engine, fraud detection
+
+
+Common NoSQL databases:
+MongoDB - uses Document-Based, storing data in JSON objects
+ElasticSearch - optimized for storing/analyzing massive datasets; fast and efficient (per name)
+Apache Cassandra - very scalable; optimized for handling faulty values
+
+~~~ Use in Web Applications ~~~
+The following code is in PHP
+
+first, db has to be installed or set up on back end server
+once running, we can connect:
+	$conn = new mysqli("localhost", "user", "pass");
+
+create new db:
+	$sql = "CREATE DATABASE db1";
+	$conn->query($sql)
+
+web apps usually use user input to retrieve data; Ex.:
+
+$searchInput = $_POST['findUser'];
+$query = "select * from users where name like '%$searchInput%'";
+$result = conn->query($query);
+
+which sends back results to user:
+while($row = $result->fetch_assoc() ) {
+	echo $row["name"]."<br>";
+}
