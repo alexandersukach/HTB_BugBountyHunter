@@ -1,0 +1,31 @@
+
+~~~ Intro to Web Proxies ~~~
+testing web requests to back-end servers is a big part of webapp pentesting
+
+proxies allow us to capture requests/traffics passing between apps and back-end
+	servers, and manipute these requests for testing
+
+~~~ What are Web Proxies? ~~~
+specialized tools set up between a browser and back-end server to capture/view
+	requests being sent between both ends; MTM tool
+while Wireshark analyzes all local traffic, web proxies mainly work with web ports
+
+we can intercept a request, modify the data, and see how the back-end handles the new request
+
+~~~ Uses of Web Proxies ~~~
+in addition to capturing and replaying HTTP requests, web proxies are used for:
+vulnerability scanning, fuzzing, crawling, application mapping, request analysis,
+	configuration testing, code reviews
+
+~~~ Burp Suite ~~~
+most common web proxy with many user-friendly features, some of which, though, are
+	limited to the Pro/Enterprise versions; free version is extremely powerful
+
+~~~ OWASP Zed Attack Proxy (ZAP) ~~~
+- another common proxy tool
+advantage is that it's free/open-source so no limit or throttling in scans that wouldn't
+	be in place with a subscription
+
+both work well, it just depends on the situation
+
+

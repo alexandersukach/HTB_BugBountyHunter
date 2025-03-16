@@ -1,0 +1,14 @@
+
+Basic setup information for Foxy Proxy and CA
+127.0.0.1
+port 8080
+
+
+
+go to http://burp with proxy on and intercept enabled in burp
+download ca certificate
+go to about:preferences#privacy
+import the downloaded ca certificate
+
+in zap, go to tools, options, dynamic sssl certificate, then save
+
