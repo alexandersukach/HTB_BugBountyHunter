@@ -1,0 +1,19 @@
+~~~ Common Web Vulnerabilities ~~~
+
+~~~ Broken Authentication/Access Control ~~~
+
+BA - allows attackers to bypass authentication functions
+BAC - allowsw attackers to access pages/features they shouldn't be able to
+
+~~~ Malicious File Upload ~~~
+- if a website doesn't properly validate file uploads, we can submit a malicious script
+	which could allow command execution on a remote server
+
+~~~ Command Injection ~~~
+- if input is not validated, attackers can inject OS commands, alongside the originally
+	intended one, on the back end server to gain control
+
+~~~ SQL Injection (SQLi) ~~~
+- if input is not validated, a SQL query could be executed to take control of the hosting server
+
+

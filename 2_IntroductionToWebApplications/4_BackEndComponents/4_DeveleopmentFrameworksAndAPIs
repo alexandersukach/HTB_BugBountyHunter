@@ -1,0 +1,39 @@
+
+~~~ Development Frameworks and APIs ~~~
+web dev frameworks have come about to allow easier implementation of core functionalities that all web apps share,
+	allowing the dev to not begin from scratch
+
+Examples: Laravel (PHP), Express (Node.JS), Django (Python), Rails (Ruby)
+
+
+~~~ APIs ~~~
+Web APIs and HTTP requests allow the back and front ends to send data between each other
+
+APIs ask the backend to complete a specific task with specific input
+The backend processes the request, performs necessary functions, and returns response to front end, which then
+	renders the user's output on the client-side
+
+GET and POST are the default ways of sending data
+passing a param through GET is done in the URL, while with POST, params are passed at the bottom of the request
+
+
+~~~ Web APIs ~~~
+API (Application Programming Interface) - interface within an app specifying how it interacts with other apps
+	- allow remote access to back end components
+
+2 API standards:
+
+~~~ SOAP ~~~
+Simple Objects Access - HTTP request and response are both in XML format
+useful when sharing stateful objects, ie the state of a page being shared
+
+~~~ REST ~~~
+Representational State Transfer - shares data through URL path and usually returns JSON data
+- usually focus on on pages that expect one type of input passed directly through URL, without specifying name/type
+- helpful for search, sort, filter, etc
+Methods:
+GET - retrieve data
+POST - create data
+PUT - create/request existing data
+DELETE - remove data
+

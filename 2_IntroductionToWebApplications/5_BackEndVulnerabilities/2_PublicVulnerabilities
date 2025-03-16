@@ -1,0 +1,28 @@
+
+~~~ Public Vulnerabilities ~~~
+
+~~~ Public CVE ~~~
+Common Vulnerabilities and Exposures
+- many vulnerabilities are shared publicly and assigned a CVE record and score
+
+* Tip: First step is to identify web app version and search for public exploits *
+
+~~~ Common Vulnerability Scoring System (CVSS) ~~~
+industry standard for assessing severity of vulnerabilities
+dependent on metrics: Base, Temporal, Environmental
+
+Base metric produces score 1-10, modified by applying temporal and environmental
+
+Currently, we have V2 and V3 scoring, with slight difference in categorization of
+	vulnerabilities
+
+~~~ Back-end Server Vulnerabilities ~~~
+in addition to vulns for web apps, also consider back end component vulns, particularly
+	web-server oriented
+
+back end server / database vulns are utilized after gaining local access to the server
+this can lead to high privileged access to gain control over other servers within the
+	same network
+they are not directly exploitable internally, but very critical and must be patched
+	upon discovery
+
